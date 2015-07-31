@@ -1,0 +1,49 @@
+<html>
+	<head>
+		<title></title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="http://builds.handlebarsjs.com.s3.amazonaws.com/handlebars-v1.1.2.js"></script>
+		<script src="http://builds.emberjs.com/tags/v1.2.0/ember.min.js"></script>
+	</head>
+	<body>
+
+		<script type="text/x-handlebars" data-template-name="index">
+			<div id="person">
+				First name: {{input type="text" value=firstname}}<br><br>
+				Last name: {{input type="text" value=lastname}}<br><br>
+				Fullname: {{model.fullname}}
+			</div>
+		</script>
+	
+
+	
+		<script>
+			
+			App = Ember.Application.create();
+			App.Person = Ember.Object.extend({
+			  firstname: null,
+			  lastname: null,
+			  fullname: function() {
+			    return this.get('firstname') + ' ' + this.get('lastname');
+			  }.property('firstname', 'lastname')
+			});
+
+			var person = App.Person.create({
+			  firstname: "Taro",
+			  lastname:  "Yamada"
+			});
+
+			App.Router.map(function () {
+			});
+
+			App.IndexRoute = Ember.Route.extend({
+			    model:function () {
+			        return person;
+			    }
+			});
+
+		</script>
+	</body>
+</html>

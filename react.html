@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<title></title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="style.css">
+		<script src="http://fb.me/react-with-addons-0.12.0.js"></script>
+		<script src="http://fb.me/JSXTransformer-0.12.0.js"></script>
+	</head>
+	<body>
+	
+		<script type="text/jsx">
+			var MyApp = React.createClass({
+				getInitialState: function(){
+				  return {
+				      firstname: this.props.firstname,
+				      lastname:  this.props.lastname,
+				  }
+				},
+				handleChange: function(){
+				  var firstname = this.refs.firstname.getDOMNode().value;
+				  var lastname = this.refs.lastname.getDOMNode().value;
+				  this.setState({
+				      firstname: firstname,
+				      lastname: lastname,
+				    });
+				},
+				render: function() {
+					var fullName = this.state.firstname + this.state.lastname;
+					return (
+						// JSX syntax
+					    <div>
+					    First name: <input ref="firstname" onChange={this.handleChange} value={this.state.firstname}/><br/><br/>
+					    Last name: <input ref="lastname" onChange={this.handleChange} value={this.state.lastname}/><br/><br/>
+					    Full name: {fullName}
+					    </div>);
+				}
+			});
+			React.render(<MyApp firstname="Taro" lastname="Yamada" />, document.body);
+		</script>
+
+
+	</body>
+</html>

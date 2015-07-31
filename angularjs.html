@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<title></title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
+	</head>
+	<body>
+
+		<div ng-app ng-controller="PersonController">
+			First Name: <input type=text ng-model="firstname"><br><br>
+			Last Name: <input type=text ng-model="lastname"><br><br>
+			Full Name: {{getFullName()}}
+		</div>
+	
+	
+		<script>
+			
+			function PersonController($scope) {
+			  $scope.firstname = "Taro";
+			  $scope.lastname  = "Yamada";
+			  $scope.getFullName = function() {
+			    return $scope.firstname + " " + $scope.lastname;
+			   };
+			}
+
+
+		</script>
+	</body>
+</html>
