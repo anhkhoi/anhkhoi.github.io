@@ -1,1 +1,26 @@
-Hello world
+<html>
+	<head>
+		<title></title>
+		<style>
+			input {height: 27px; width: 200px;}
+		</style>
+	</head>
+	<body>
+
+
+		First name: <input type="text" id="firstname" /><br><br>
+		Last name: <input type="text" id="lastname" /><br><br>
+		Fullname: <span id="fullname"></span>
+
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script>
+
+			$('#firstname, #lastname').bind('change keyup', function(){
+				var fullname = $('#firstname').val() + ' ' + $('#lastname').val();
+			    $('#fullname').text(fullname);
+			});
+
+		</script>
+	</body>
+</html>
