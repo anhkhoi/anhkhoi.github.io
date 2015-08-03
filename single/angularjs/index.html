@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<title></title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="style.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.min.js"></script>
+  		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-route.js"></script>
+	</head>
+	<body ng-app="SinglePageApp">
+		<div ng-controller="DemoController">
+			<nav>
+				<ul>
+					<li><a href="#/">Home</a></li>
+					<li><a href="#/about">About</a></li>
+				</ul>
+			</nav>
+			<div class="view" ng-view>
+					
+			</div>
+		</div>
+		<script>
+			var app = angular.module('SinglePageApp', ['ngRoute']);
+			app.config(function($routeProvider) {
+				$routeProvider
+				.when('/', {
+					templateUrl: 'home.html'
+				})
+				.when('/about', {
+					templateUrl: 'about.html'
+				});
+			});
+			app.controller('DemoController', function($scope) {
+
+			});
+		</script>
+	</body>
+</html>
