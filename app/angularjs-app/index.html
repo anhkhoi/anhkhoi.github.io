@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<title></title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="style.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.min.js"></script>
+  		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-route.js"></script>
+	</head>
+	<body ng-app="SinglePageApp">
+		<div ng-controller="IndexController">
+			<nav>
+				<ul>
+					<li><a href="#/">Home</a></li>
+					<li><a href="#/about">About</a></li>
+				</ul>
+			</nav>
+			<p style="padding-left: 30px;">When you click on any link. You'll redirected to tagret anchor link. View content will be rendered into below box.</p>
+			<div class="view" ng-view>
+					
+			</div>
+		</div>
+		<script>
+			
+			var app = angular.module('SinglePageApp', ['ngRoute']);
+
+			app.config(function($routeProvider) {
+				$routeProvider
+				.when('/', {
+					templateUrl: 'home.html',
+					controller: 'IndexController'
+				})
+				.when('/about', {
+					templateUrl: 'about.html',
+					controller: 'AboutController'
+				});
+			});
+
+			app.controller('IndexController', function($scope) {
+				$scope.controllerName = 'IndexController';
+			});
+
+			app.controller('AboutController', function($scope) {
+				$scope.controllerName = 'AboutController';
+			});
+
+		</script>
+	</body>
+</html>

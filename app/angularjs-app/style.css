@@ -1,0 +1,21 @@
+nav {
+
+}
+ul {
+
+}
+li {
+    display: inline-block;
+	
+    width: 100px;
+    padding: 10px 0px;
+}
+div.view {
+    border: 1px solid gray;
+    width: calc(100%-60px);
+    height: 200px;
+    margin: 30px;
+    padding: 10px;
+}
+p{
+}
