@@ -14,7 +14,7 @@
 				<h3 class="col-md-3">ReactJs</h3>
 				<div class="run" id="run">Run</div>
 			</div>
-			<p>Make a random list with about 300 items, rendered into HTML for displaying. Then, measuring time before and after rendering whether it's take how long.</p>
+			<p>Make a random list with about 1000 items, rendered into HTML for displaying. Then, measuring time before and after rendering whether it's take how long.</p>
 			<div class="results row" id="results">
 
 			</div>
@@ -36,7 +36,7 @@
 			});
 
 			$("#run").on('click', function() {
-				var data = buildData(300),
+				var data = buildData(1000),
 					built = new MyList({data: data}),
 					date = new Date();
 				React.render(built, document.getElementById("results"));

@@ -16,7 +16,7 @@
 				<h3 class="col-md-3">Backbone</h3>
 				<div class="run" id="run">Run</div>
 			</div>
-			<p>Make a random list with about 300 items, rendered into HTML for displaying. Then, measuring time before and after rendering whether it's take how long.</p>
+			<p>Make a random list with about 1000 items, rendered into HTML for displaying. Then, measuring time before and after rendering whether it's take how long.</p>
 			<div class="results row" id="results">
 				
 			</div>
@@ -31,6 +31,7 @@
 			</script>
 		</div>
 		<script>
+			var date = null;
 			var MyModel = Backbone.Model.extend({
 					defaults: {
 						items: []
@@ -42,21 +43,27 @@
 			listItems = new MyModel(),
 			MyView = Backbone.View.extend({
 				el: '#container',
-				totalItems: 300,
+				totalItems: 1000,
 				model: listItems,
 				events: {
 					'click #run': 'run',
 				},
+				initialize: function() {
+					this.on('render', this.afterRender);
+				},
+				afterRender: function() {
+					this.$('#run').text((new Date() - date) + " ms");
+				},
 				render: function(){
-					var date = new Date(),
-						data = buildData(this.totalItems);
+					date = new Date();
+					var data = buildData(this.totalItems);
 					this.model.setItems(data);
 					template = _.template(this.$('#my-template').html());
 					this.$('.results').html(template(this.model.toJSON()));
-					this.$('#run').text((new Date() - date) + " ms");
 			    },
 				run: function() {
 					this.render();
+					this.trigger('render', this.afterRender);
 				}
 			});
 			var myView = new MyView();

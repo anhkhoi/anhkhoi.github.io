@@ -27,7 +27,7 @@
 		</div>
 		<script>
 			var app = angular.module('SinglePageApp', []).controller('IndexController', function($scope) {
-				$scope.totalItems = 300;
+				$scope.totalItems = 1000;
 				$scope.run = function() {
 					var data = buildData($scope.totalItems), date = new Date();
 					$scope.$$postDigest(function() {
