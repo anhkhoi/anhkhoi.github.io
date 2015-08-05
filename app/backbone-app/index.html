@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+  <head>
+        <title>My TODOs</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div id="viewContainer">
+            <nav>
+                <ul>
+                    <li><a href="#/">Home</a></li>
+                    <li><a href="#/about">About</a></li>
+                </ul>
+            </nav>
+            <p style="padding-left: 30px;">When you click on any link. You'll redirected to tagret anchor link. View content will be rendered into below box.</p>
+            <div id="view" class="view">
+                    
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.1/backbone-min.js"></script>
+        <script src="js/app.js"></script>
+        <script>
+            // window.onload = function() {
+            //     app.init();
+            // }
+
+            var AboutModel = Backbone.Model.extend({
+                defaults: {
+                    controllerName: 'About Controller'
+                }
+            });
+            var about = new AboutModel();
+
+            var IndexModel = Backbone.Model.extend({
+                defaults: {
+                    controllerName: 'Home Controller'
+                }
+            });
+            var index = new IndexModel();
+
+            var IndexView = Backbone.View.extend({
+                el: '#view',
+                model: index,
+                template: _.template("<strong>Controller: <%= controllerName %></strong>"),
+                initialize: function() {
+                    return this.render();
+                },
+                render: function() {
+                    $(this.el).html(this.template(this.model.toJSON()));
+                    return this;
+                }
+            });
+
+
+            var AboutView = Backbone.View.extend({
+                el: '#view',
+                model: about,
+                template: _.template("<strong><%= controllerName %></strong>"),
+                initialize: function() {
+                    this.render();
+                },
+                render: function() {
+                    $(this.el).html(this.template(this.model.toJSON()));
+                    return this;
+                }
+            });
+
+            var AppRouter = Backbone.Router.extend({
+                routes: {
+                    '': 'index',
+                    'about': 'about'
+                },
+                index: function() {
+                    new IndexView();
+                },
+                about: function() {
+                    new AboutView();
+                }
+            });
+            var app = new AppRouter();
+            
+            Backbone.history.start();
+
+        </script>
+    </body>
+</html>
