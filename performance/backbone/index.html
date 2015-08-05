@@ -30,7 +30,6 @@
 				</div>
 			</script>
 		</div>
-	
 		<script>
 			var MyModel = Backbone.Model.extend({
 					defaults: {
@@ -52,18 +51,15 @@
 					var date = new Date(),
 						data = buildData(this.totalItems);
 					this.model.setItems(data);
-					template = _.template($('#my-template').html());
-					$('.results').html(template(this.model.toJSON()));
-					$('#run').text((new Date() - date) + " ms");
+					template = _.template(this.$('#my-template').html());
+					this.$('.results').html(template(this.model.toJSON()));
+					this.$('#run').text((new Date() - date) + " ms");
 			    },
 				run: function() {
 					this.render();
 				}
 			});
-
 			var myView = new MyView();
-
-
 		</script>
 	</body>
 </html>
