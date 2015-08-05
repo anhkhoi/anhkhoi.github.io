@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<title></title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../style.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.min.js"></script>
+  		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-route.js"></script>
+  		<script src="../util.js"></script>
+	</head>
+	<body ng-app="SinglePageApp">
+		<div ng-controller="IndexController">
+			<div class="container">
+				<div class="header row">
+					<h3 class="col-md-3">AngularJS</h3>
+					<div class="run" id="run" ng-click="run()">Run</div>
+				</div>
+				<p>Make a random list with about {{totalItems}} items, rendered into HTML for displaying. Then, measuring time before and after rendering whether it's take how long.</p>
+				<div class="results row">
+				    <div ng-repeat="item in data">
+				        <div class="col-md-3 test-data">
+				            <span>Number: {{item.num}}</span>
+				        </div>
+				    </div>
+				</div>
+			</div>
+		</div>
+		<script>
+			var app = angular.module('SinglePageApp', []).controller('IndexController', function($scope) {
+				$scope.totalItems = 300;
+				$scope.run = function() {
+					var data = buildData($scope.totalItems), date = new Date();
+					$scope.$$postDigest(function() {
+			            $("#run").text((new Date() - date) + " ms");
+			        });
+					$scope.data = data;
+				};
+			});
+
+		</script>
+	</body>
+</html>

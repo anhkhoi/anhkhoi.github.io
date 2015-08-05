@@ -17,5 +17,15 @@ div.view {
     margin: 30px;
     padding: 10px;
 }
-p{
+.run {
+	cursor: pointer;
+	margin-top: 25px;
+	font-weight: bold;
+	float: left;
+}
+.run:hover {
+	text-decoration: underline;
+}
+.results {
+	margin-top: 20px;
 }

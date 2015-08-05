@@ -1,0 +1,69 @@
+<html>
+	<head>
+		<title></title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="https://raw.githubusercontent.com/douglascrockford/JSON-js/master/json2.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.1/backbone-min.js"></script>
+		<script src="../util.js"></script>
+	</head>
+	<body>
+
+		<div class="container" id="container">
+			<div class="header row">
+				<h3 class="col-md-3">Backbone</h3>
+				<div class="run" id="run">Run</div>
+			</div>
+			<p>Make a random list with about 300 items, rendered into HTML for displaying. Then, measuring time before and after rendering whether it's take how long.</p>
+			<div class="results row" id="results">
+				
+			</div>
+			<script type="text/template" id="my-template">
+				<div class="row">
+					<% _.each(items, function(item) { %>
+						<div class="col-md-3 test-data">
+				            <span>Number: <%= item.num %></span>
+				        </div>
+					<% }); %>
+				</div>
+			</script>
+		</div>
+	
+		<script>
+			var MyModel = Backbone.Model.extend({
+					defaults: {
+						items: []
+					},
+					setItems: function(newItems) {
+						this.set({items: newItems});
+					}
+				}),
+			listItems = new MyModel(),
+			MyView = Backbone.View.extend({
+				el: '#container',
+				totalItems: 300,
+				model: listItems,
+				events: {
+					'click #run': 'run',
+				},
+				render: function(){
+					var date = new Date(),
+						data = buildData(this.totalItems);
+					this.model.setItems(data);
+					template = _.template($('#my-template').html());
+					$('.results').html(template(this.model.toJSON()));
+					$('#run').text((new Date() - date) + " ms");
+			    },
+				run: function() {
+					this.render();
+				}
+			});
+
+			var myView = new MyView();
+
+
+		</script>
+	</body>
+</html>

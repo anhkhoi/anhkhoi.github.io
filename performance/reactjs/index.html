@@ -1,0 +1,49 @@
+<html>
+	<head>
+		<title></title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../style.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="http://fb.me/react-with-addons-0.12.0.js"></script>
+		<script src="http://fb.me/JSXTransformer-0.12.0.js"></script>
+		<script src="../util.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="header row">
+				<h3 class="col-md-3">ReactJs</h3>
+				<div class="run" id="run">Run</div>
+			</div>
+			<p>Make a random list with about 300 items, rendered into HTML for displaying. Then, measuring time before and after rendering whether it's take how long.</p>
+			<div class="results row" id="results">
+
+			</div>
+		</div>
+
+		<script type="text/jsx">
+			var MyList = React.createClass({
+				render: function() {
+					var items = [];
+					for (var i = 0; i < this.props.data.length; i++) {
+						items.push(
+					        <div className="col-md-3 test-data">
+					            <span>Number: {this.props.data[i].num}</span>
+					        </div>
+						);
+					}
+					return React.createElement('div', null, items);
+				}
+			});
+
+			$("#run").on('click', function() {
+				var data = buildData(300),
+					built = new MyList({data: data}),
+					date = new Date();
+				React.render(built, document.getElementById("results"));
+				$('#run').text((new Date() - date) + " ms");
+			});
+		</script>
+
+
+	</body>
+</html>
