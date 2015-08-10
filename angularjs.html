@@ -5,9 +5,9 @@
 		<link rel="stylesheet" href="style.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
 	</head>
-	<body>
+	<body ng-app>
 
-		<div ng-app ng-controller="PersonController">
+		<div ng-controller="PersonController">
 			First Name: <input type=text ng-model="firstname"><br><br>
 			Last Name: <input type=text ng-model="lastname"><br><br>
 			Full Name: {{getFullName()}}

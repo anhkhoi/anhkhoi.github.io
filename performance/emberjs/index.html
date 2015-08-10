@@ -1,0 +1,60 @@
+<html>
+	<head>
+		<title></title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.3/handlebars.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/ember.js/1.13.6/ember.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/ember.js/1.13.6/ember-template-compiler.js"></script>
+		<script src="../util.js"></script>
+	</head>
+	<body>
+		<script type="text/x-handlebars" data-template-name="lists">
+			<div class="container" id="container">
+				<div class="header row">
+					<h3 class="col-md-3">EmberJs</h3>
+					<div class="run" id="run" {{action "run"}}>Run</div>
+				</div>
+				<p>Make a random list with about 1000 items, rendered into HTML for displaying. Then, measuring time before and after rendering whether it is take how long.</p>
+				<div class="results row" id="results">
+					{{#each item in items}}
+						<div class="col-md-3 test-data">
+				            <span>Number: {{item.num}}</span>
+				        </div>
+					{{/each}}
+				</div>
+			</div>
+		</script>
+		
+		<script>
+			
+			App = Ember.Application.create();
+
+			App.ListsController = Ember.ArrayController.extend({
+				totalItems: 1000,
+				items: [],
+				actions: {
+					run: function() {
+						var date = new Date(),
+							data = buildData(this.get('totalItems'));
+						this.set('items', data);
+						Ember.run.schedule('afterRender', this, function() {
+							$('#run').text((new Date() - date) + " ms");
+						});
+					}
+				}
+			});
+
+			App.Router.map(function() {
+				this.resource('lists');
+			});
+
+			App.IndexRoute = Ember.Route.extend({
+				beforeModel: function() {
+					this.transitionTo('lists');
+				}
+			});
+		</script>
+	</body>
+</html>

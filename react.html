@@ -7,7 +7,11 @@
 		<script src="http://fb.me/JSXTransformer-0.12.0.js"></script>
 	</head>
 	<body>
-	
+		
+		<div id="frameworks">
+			
+		</div>
+
 		<script type="text/jsx">
 			var MyApp = React.createClass({
 				getInitialState: function(){
@@ -35,7 +39,27 @@
 					    </div>);
 				}
 			});
-			React.render(<MyApp firstname="Taro" lastname="Yamada" />, document.body);
+			// React.render(<MyApp firstname="Taro" lastname="Yamada" />, document.body);
+
+			var Frameworks = React.createClass({
+				getInitialState: function() {
+					return {frameworks: ['A', 'B', 'C', 'D']};
+				},
+				render: function() {
+					return (
+						<ul>
+							{
+								this.state.frameworks.map(function(name) {
+									return <li>{name}</li>
+								})
+							}
+						</ul>
+					)
+				}
+			});
+			React.render(<Frameworks />, document.getElementById('frameworks'));
+
+
 		</script>
 
 
