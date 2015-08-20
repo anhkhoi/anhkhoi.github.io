@@ -2,11 +2,47 @@
 	<head>
 		<title>AngularJS - ReactJS</title>
 	</head>
-	<body>
+	<body ng-app="fasterAngular">
+		<div ng-controller="mycontroller">
+			<br>
+			<input ng-model="framework" />
+			<hr>
+			<h3>AngularJS</h3>
+			Rendering with traditional AngularJs {{framework}}
+			<hr>
+			<h3>AngularJs with ReactJs</h3>
+			<fast-ng framework="framework"></fast-ng>
+		</div>
 		<script src="bower_components/angular/angular.js"></script>
   		<script src="bower_components/react/react.js"></script>
   		<script src="bower_components/react/JSXTransformer.js"></script>
-		<script src="bower_components/ngReact/ngReact.js"></script>
-		<script src="app.js"></script>
+		<script>
+			var LabelComponent = React.createClass({
+				render: function() {
+					return React.DOM.div(null, 'Rendering faster in AngularJs with ', this.props.framework);
+				}
+			});
+
+			angular.module('fasterAngular', []).
+			controller('mycontroller', ['$scope', function($scope) {
+				$scope.framework = 'ReactJs';
+			}]).
+			directive('fastNg', function() {
+				return {
+					restrict: 'E',
+					scope: {
+						framework: '='
+					},
+					link: function(scope, el, attrs) {
+						scope.$watch('framework', function(newValue, oldValue) {
+							React.render(
+	                            React.createElement(LabelComponent, {framework: newValue}),
+	                            el[0]
+	                        );
+						});
+					}
+				};
+			});
+		</script>
 	</body>
 </html>

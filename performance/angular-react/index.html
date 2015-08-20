@@ -1,0 +1,78 @@
+<html>
+	<head>
+		<title>AngularJS - ReactJS</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body ng-app="fasterAngular">
+		<div ng-controller="mycontroller" class="container">
+			<div class="header row">
+				<h3 class="col-md-3">ReactJs</h3>
+				<button class="Run" ng-click="refresh()">Run</button>
+				<label style="margin-top: 27px;margin-left: 20px;">Take about: {{time}}</label>
+			</div>
+			<p>Make a random list with about 1000 items, rendered into HTML for displaying. Then, measuring time before and after rendering whether it's take how long.</p>
+			<br>
+			<fast-repeat data="data"></fast-repeat>
+		</div>
+		<script src="bower_components/angular/angular.js"></script>
+  		<script src="bower_components/react/react.js"></script>
+  		<script src="util.js"></script>
+  		<script>
+  			var initializing = true;
+  			var MYLIST = React.createClass({
+  				render: function() {
+  					var data = this.props.data;
+  					var rows = data.map(function(datum) {
+  						return (
+  							React.DOM.tr(
+  								null,
+  								React.DOM.td(null, datum[0]),
+  								React.DOM.td(null, datum[1]),
+  								React.DOM.td(null, datum[2]),
+  								React.DOM.td(null, datum[3])
+  							)
+  						);
+	  				});
+  					return (
+  						React.DOM.table(null, rows)
+  					);
+  				}
+  			});
+
+  			angular.module('fasterAngular', []).
+  			controller('mycontroller', ['$scope', function($scope) {
+  				$scope.data = [];
+  				$scope.refresh = function() {
+	  				for (var i = 0; i < 250; ++i) {
+	  					$scope.data[i] = {};
+	  					for (var j = 0; j < 4; ++j) {
+	  						$scope.data[i][j] = Math.random();
+	  					}
+	  				}
+  				};
+  			}]).
+  			directive('fastRepeat', function() {
+  				return {
+  					restrict: 'E',
+  					scope: {
+  						data: '='
+  					},
+  					link: function(scope, el, attrs) {
+  						scope.$watchCollection('data', function(newValue, oldValue) {
+  							var date = new Date();
+  							React.render(React.createElement(MYLIST, {data: newValue}), el[0]);
+  							var newDate = (new Date() - date) + " ms";
+  							if (initializing) {
+  								initializing = false;
+  								scope.$parent.time = '';
+  							} else {
+								scope.$parent.time = newDate;
+  							}
+  						});
+  					}
+  				};
+  			});
+  		</script>
+  	</body>
+</html>
