@@ -1,0 +1,72 @@
+{
+  "name": "angular-with-react",
+  "author": "khoi",
+  "scripts": {
+    "build": "grunt build",
+    "test": "grunt test"
+  },
+  "version": "1.0.0",
+  "main": "ngReact.js",
+  "description": "No description",
+  "homepage": "None",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "license": "MIT",
+  "dependencies": {
+    "angular": "<2.0.0",
+    "react": ">=0.12.0"
+  },
+  "browserify-shim": {
+    "angular": "global:angular"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.3.6",
+    "browserify": "^7.0.3",
+    "browserify-shim": "^3.8.1",
+    "es5-shim": "^4.0.5",
+    "grunt": "0.4.1",
+    "grunt-contrib-uglify": "0.2.0",
+    "grunt-contrib-watch": "0.5.3",
+    "grunt-docco": "0.3.3",
+    "grunt-karma": "0.12.0",
+    "jasmine-core": "2.3.4",
+    "karma-browserify": "1.0.1",
+    "karma-jasmine": "^0.3.6",
+    "karma-phantomjs-launcher": "0.2.0",
+    "load-grunt-tasks": "0.1.0",
+    "phantomjs": "1.9.17",
+    "reactify": "0.17.1",
+    "angular-seed": "0.0.0",
+    "bower": "^1.3.1",
+    "http-server": "^0.6.1"
+  },
+  "scripts": {
+    "postinstall": "bower install",
+
+    "prestart": "npm install",
+    "start": "http-server -a localhost -p 8000 -c-1",
+
+    "pretest": "npm install",
+    "test": "karma start karma.conf.js",
+    "test-single-run": "karma start karma.conf.js  --single-run",
+
+    "preupdate-webdriver": "npm install",
+    "update-webdriver": "webdriver-manager update",
+
+    "preprotractor": "npm run update-webdriver",
+    "protractor": "protractor e2e-tests/protractor.conf.js",
+
+    "update-index-async": "node -e \"require('shelljs/global'); sed('-i', /\\/\\/@@NG_LOADER_START@@[\\s\\S]*\\/\\/@@NG_LOADER_END@@/, '//@@NG_LOADER_START@@\\n' + sed(/sourceMappingURL=angular-loader.min.js.map/,'sourceMappingURL=bower_components/angular-loader/angular-loader.min.js.map','app/bower_components/angular-loader/angular-loader.min.js') + '\\n//@@NG_LOADER_END@@', 'app/index-async.html');\""
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "keywords": [
+    "angularjs",
+    "angular",
+    "react",
+    "ngReact"
+  ]
+}

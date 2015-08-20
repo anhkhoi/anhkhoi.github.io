@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<title>AngularJS - Perforamnce Testing</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body ng-app="SinglePageApp">
+		<div ng-controller="IndexController">
+			<div class="container">
+				<div class="header row">
+					<h3 class="col-md-3">AngularJS</h3>
+					<runbutton></runbutton>
+					<!-- <div class="run" id="run" ng-click="run()">Run</div> -->
+				</div>
+				<paragraph fname="khoi"></paragraph>
+				<div class="results row" id="results"></div>
+			</div>
+		</div>
+		<script>
+			var MyApp = MyApp || {
+				app: null,
+				module: null
+			};
+		</script>
+		<script src="bower_components/angular/angular.js"></script>
+  		<script src="bower_components/react/react.js"></script>
+  		<script src="bower_components/react/JSXTransformer.js"></script>
+		<script src="bower_components/ngReact/ngReact.js"></script>
+		<script src="RunButton.jsx" type="text/jsx"></script>
+		<script src="app.js"></script>
+	</body>
+</html>

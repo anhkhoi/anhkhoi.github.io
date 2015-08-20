@@ -1,0 +1,25 @@
+{
+  "name": "angular-with-react",
+  "author": "",
+  "version": "0.1",
+  "main": "",
+  "description": "No description",
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "license": "MIT",
+  "dependencies": {
+    "angular": "<2.0.0",
+    "react": ">=0.12.0",
+    "ngReact": ">=0.1.7"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "angularjs",
+    "angular",
+    "react",
+    "ngReact"
+  ]
+}
