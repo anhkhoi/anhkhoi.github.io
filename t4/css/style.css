@@ -53,9 +53,8 @@ body {
 
 .banner-wrapper {
     height: 220px;
-    /*background: #fff;*/
-    /*border-bottom: 1px solid #ececec;*/
-    background: linear-gradient(rgba(97, 169, 62, 0.87), rgb(97, 169, 62)), url(http://eco-nature.cmsmasters.net/onepage/wp-content/uploads/sites/2/2014/07/parallax_wood.jpg);
+    background: #fff;
+    border-bottom: 1px solid #ececec;
 }
 
 .banner {
@@ -65,6 +64,7 @@ body {
 
 .banner div {
     margin-bottom: 10px;
+    color: #555;
 }
 
 .banner span {
@@ -79,7 +79,7 @@ body {
 .banner .company-name {
     font-weight: 600;
     font-size: 24px;
-    color: #fff;
+    color: rgba(97, 169, 62, 1);
 }
 
 .banner .mst {}
@@ -194,7 +194,7 @@ body {
 
 .gallary-wrapper {
     height: 330px;
-    background: linear-gradient(rgba(66, 57, 50, 0.74), rgba(66, 57, 50, 0.88)), url(http://eco-nature.cmsmasters.net/onepage/wp-content/uploads/sites/2/2014/07/parallax_two.jpg);
+    background: linear-gradient(rgba(97, 169, 62, 0.87), rgb(97, 169, 62)), url(http://eco-nature.cmsmasters.net/onepage/wp-content/uploads/sites/2/2014/07/parallax_wood.jpg);
 }
 
 .gallary-wrapper .title {
