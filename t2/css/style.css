@@ -37,7 +37,9 @@ body {
 
 .wrapper {}
 
-.header {}
+.header {
+    padding-top: 30px;
+}
 
 .header .logo {
     position: absolute;
@@ -65,8 +67,9 @@ body {
 
 .header .banner .company-name {
     text-transform: uppercase;
-    font-size: 22px;
+    font-size: 26px;
     margin-bottom: 18px;
+    color: rgba(97, 169, 62, 1);
 }
 
 .header .banner .mst {}
@@ -88,7 +91,7 @@ body {
 }
 
 #navbar .nav>li.active {
-    background: rgba(122, 163, 84, 1);
+    background: rgba(97, 169, 62, 1);
 }
 
 #navbar .nav>li.active a:hover {
@@ -108,7 +111,7 @@ body {
 
 #navbar .nav>li>a:hover {
     color: #fff;
-    background-color: rgba(122, 163, 84, 1) !important;
+    background-color: rgba(97, 169, 62, 1) !important;
 }
 
 #navbar .nav>li a {
@@ -136,7 +139,7 @@ body {
     top: 50px;
     left: 0;
     z-index: 1;
-    background: rgba(122, 163, 84, 1);
+    background: rgba(97, 169, 62, 1);
     width: 300px;
 }
 
@@ -156,7 +159,7 @@ body {
 }
 
 #navbar .nav>li .dropdown li:hover a {
-    color: rgba(122, 163, 84, 1);
+    color: rgba(97, 169, 62, 1);
 }
 
 #navbar .nav>li .dropdown li a {
@@ -181,7 +184,7 @@ body {
 }
 
 .wrap-footer {
-    background: rgba(122, 163, 84, 1);
+    background: rgba(97, 169, 62, 1);
     color: #fff;
     height: 50px;
     line-height: 50px;
@@ -216,5 +219,5 @@ body {
 }
 
 .main .title span {
-    color: #7aa354;
+    color: rgba(97, 169, 62, 1);
 }
