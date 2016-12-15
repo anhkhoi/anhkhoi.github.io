@@ -8,7 +8,7 @@
 
 #DrpDwnMn0 {
     left: 100px !important;
-    top: 160px !important;
+    top: 335px !important;
 }
 
 
@@ -71,7 +71,7 @@ ul.dropdown-container li a:hover {
     left: 50%;
     margin-left: -130px;
     /* half of width */
-    top: -400px;
+    top: -600px;
 }
 
 .dropOut {
@@ -206,7 +206,7 @@ ul.dropdown-container li:hover .dropOut {
 }
 
 #PAGES_CONTAINER {
-    top: 232px !important;
+    top: 407px !important;
     border-top: 1px solid #eaeaea;
 }
 
@@ -216,7 +216,7 @@ ul.dropdown-container li:hover .dropOut {
 }
 
 .s0inlineContent {
-    border-bottom: 1px solid #eaeaea;
+    
 }
 
 .s5inlineContent {
@@ -245,4 +245,21 @@ ul.dropdown-container li:hover .dropOut {
 
 #WRchTxt8 {
     left: 0 !important;
+}
+
+.gallary {
+    border-bottom: 1px solid #eaeaea;
+    position: absolute;
+    top: 170px;
+    padding-bottom: 20px;
+}
+
+.gallary img {
+    width: 296px;
+    height: 140px;
+    margin-left: 1px;
+}
+
+.gallary img:first-child {
+    margin-left: 0;
 }
