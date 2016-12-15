@@ -6,6 +6,11 @@
     color: #A2CC01;
 }
 
+#DrpDwnMn0 {
+    left: 100px !important;
+    top: 160px !important;
+}
+
 
 /*Dropdown Menu*/
 
@@ -166,4 +171,39 @@ ul.dropdown-container li:hover .dropOut {
 
 .drop.cooperation .dropOut ul li {
     width: 145px;
+}
+
+.banner {
+    font-size: 17px;
+    color: #b1b1b1;
+    font-weight: normal;
+    text-align: center;
+    line-height: 18px;
+    margin-top: 40px;
+}
+
+.banner div {
+    margin-top: 17px;
+    font-family: sans-serif;
+    text-transform: uppercase;
+}
+.banner div:first-child {
+    margin-top: 0;
+}
+
+#PAGES_CONTAINER {
+    top: 232px !important;
+    border-top: 1px solid #eaeaea;
+}
+
+#SITE_FOOTER {
+    top: 960px !important;
+}
+
+.s0inlineContent {
+    border-bottom: 1px solid #eaeaea;
+}
+
+.s5inlineContent {
+    top: 40px !important;
 }
