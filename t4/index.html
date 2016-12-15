@@ -82,7 +82,7 @@
         <div class="row banner-wrapper">
             <div class="container">
                 <div class="banner">
-                    <div class="company-name">Công ty TNHH Chậu ghép trồng rau ABCD</div>
+                    <div class="company-name hide">Công ty TNHH Chậu ghép trồng rau ABCD</div>
                     <div class="mst hide"><label>MST:</label><span>0314068418</span></div>
                     <div class="contact hide"><label>Giám đốc:</label><span>Trần Đình Tri</span>, <label>Điện thoại:</label><span>0961 477 522</span></div>
                 </div>
@@ -140,7 +140,7 @@
     <script>
         window.onload = function() {
 
-            $('.company-name').addClass('animated bounceInLeft');
+            $('.company-name').removeClass('hide').addClass('animated bounceInLeft');
 
             setTimeout(function() {
                 $('.mst').removeClass('hide').addClass('animated bounceInLeft');
