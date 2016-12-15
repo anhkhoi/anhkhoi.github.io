@@ -182,11 +182,25 @@ ul.dropdown-container li:hover .dropOut {
     margin-top: 40px;
 }
 
+.banner .company-name {
+    color: #A2CC01;
+    font-size: 20px;
+}
+
 .banner div {
     margin-top: 17px;
     font-family: sans-serif;
     text-transform: uppercase;
 }
+
+.banner div label {
+
+}
+
+.banner div span {
+    color: #8e8a8a;
+}
+
 .banner div:first-child {
     margin-top: 0;
 }
