@@ -247,6 +247,12 @@ body {
 
 .main p {}
 
+.main .img-feature {
+    width: 260px;
+    float: left;
+    margin-right: 20px;
+}
+
 .main .title {
     text-align: center;
     color: rgba(97, 169, 62, 1);
