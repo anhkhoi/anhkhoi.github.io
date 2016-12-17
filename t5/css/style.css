@@ -260,3 +260,14 @@ body {
 .wrapper .bx-wrapper {
     border: none;
 }
+
+.footer .social {
+    text-align: right;
+}
+
+.footer .social a {
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+.footer .social img {}
