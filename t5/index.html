@@ -23,11 +23,11 @@
                             <img src="https://placeholdit.imgix.net/~text?bg=transparent&txtsize=26&txt=LOGO&w=100&h=100" alt="logo" class="img-circle">
                         </div>
                         <div class="banner">
-                            <div class="company-name hide">
+                            <div class="company-name">
                                 Công ty TNHH Chậu ghép trồng rau ABCD
                             </div>
-                            <div class="mst hide"><label>MST: </label><span>0314068418</span></div>
-                            <div class="contact hide">
+                            <div class="mst"><label>MST: </label><span>0314068418</span></div>
+                            <div class="contact">
                                 <label>Giám đốc:</label> <span>Trần Đình Tri</span>, <label>ĐT:</label> <span>0961 477 522</span>
                             </div>
                         </div>
@@ -145,15 +145,15 @@
     <script src="js/jquery.bxslider.min.js"></script>
     <script>
         $(document).ready(function() {
-            $('.company-name').removeClass('hide').addClass('animated bounceInLeft');
+            // $('.company-name').removeClass('hide').addClass('animated bounceInLeft');
 
-            setTimeout(function() {
-                $('.mst').removeClass('hide').addClass('animated bounceInLeft');
-            }, 500);
+            // setTimeout(function() {
+            //     $('.mst').removeClass('hide').addClass('animated bounceInLeft');
+            // }, 500);
 
-            setTimeout(function() {
-                $('.contact').removeClass('hide').addClass('animated bounceInLeft');
-            }, 1000);
+            // setTimeout(function() {
+            //     $('.contact').removeClass('hide').addClass('animated bounceInLeft');
+            // }, 1000);
 
             $('.navbar li').hover(function() {
                 $(this).removeClass('active');
@@ -166,7 +166,9 @@
 
             });
 
-            $('.bxslider').bxSlider();
+            $('.bxslider').bxSlider({
+                auto: true
+            });
         });
     </script>
 </body>
