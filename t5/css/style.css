@@ -1,0 +1,261 @@
+html {
+    height: 100%;
+}
+
+body {
+    position: relative;
+    min-height: 100%;
+    background: #f3f3f3;
+    font-size: 16px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+.clearfix {
+    display: inline-block;
+}
+
+
+/* start commented backslash hack \*/
+
+* html .clearfix {
+    height: 1%;
+}
+
+.clearfix {
+    display: block;
+}
+
+
+/* close commented backslash hack */
+
+.wrapper {}
+
+.header {
+    background-color: #fff;
+    padding: 30px;
+    height: 190px;
+}
+
+.header .logo {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: transparent;
+}
+
+.header .logo img {
+    border: 1px solid #61a93e;
+}
+
+.banner-wrapper {
+    height: 220px;
+    /*background: #fff;*/
+    /*border-bottom: 1px solid #ececec;*/
+    background: linear-gradient(rgba(97, 169, 62, 0.87), rgb(97, 169, 62)), url(http://eco-nature.cmsmasters.net/onepage/wp-content/uploads/sites/2/2014/07/parallax_wood.jpg);
+}
+
+.banner {
+    color: #fff;
+    margin-top: 12px;
+    margin-left: 60px;
+}
+
+.banner div {
+    margin-bottom: 10px;
+}
+
+.banner span {
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #423932;
+}
+
+.banner label {
+    margin-right: 5px;
+    color: #b1b1b1;
+    font-weight: 600;
+}
+
+.banner .company-name {
+    font-weight: 600;
+    font-size: 26px;
+    color: #61a93e;
+}
+
+.banner .mst {}
+
+.banner .contact {}
+
+#navbar {}
+
+#navbar {
+    border-top: 1px solid rgba(235, 235, 235, 1);
+    background-color: #f3f3f3;
+}
+
+#navbar .nav {
+    list-style: none;
+    margin: 0;
+    border-bottom: 0;
+    border: 0;
+}
+
+#navbar .nav>li.active {
+    background-color: #61a93e;
+    color: #fff;
+}
+
+#navbar .nav>li:first-child {
+    border-left: 1px solid rgba(235, 235, 235, 1);
+}
+
+#navbar .nav>li.active a:hover {}
+
+#navbar .nav>li.active a {
+    color: #fff;
+}
+
+#navbar .nav>li {
+    float: left;
+    line-height: 30px;
+    height: 50px;
+    border-right: 1px solid rgba(235, 235, 235, 1);
+}
+
+#navbar .nav>li>a {
+    font-weight: 600;
+}
+
+#navbar .nav>li:first-child a {}
+
+#navbar .nav>li>a:hover {
+    background-color: rgba(97, 169, 62, 1);
+    color: #fff;
+}
+
+#navbar .nav>li a {
+    color: #423932;
+    font-size: 16px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#navbar .nav>li .dropdown {
+    list-style: none;
+    visibility: hidden;
+    position: absolute;
+    top: 50px;
+    left: 0;
+}
+
+#navbar .nav>li:hover .dropdown {
+    visibility: visible;
+    opacity: 1;
+}
+
+#navbar .nav>li .dropdown {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s;
+    list-style: none;
+    padding-left: 0px;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    z-index: 1;
+    background: #61a93e;
+    width: 300px;
+}
+
+#navbar .nav>li .dropdown li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-top: 1px solid #d6d6d6;
+    transition: background-color 0.2s;
+}
+
+#navbar .nav>li .dropdown li:first-child {
+    border-top: 0;
+}
+
+#navbar .nav>li .dropdown li:hover {
+    background-color: #fff;
+}
+
+#navbar .nav>li .dropdown li:hover a {
+    color: rgba(97, 169, 62, 1);
+}
+
+#navbar .nav>li .dropdown li a {
+    font-size: 15px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.gallary-wrapper {
+    height: 330px;
+    background: linear-gradient(rgba(66, 57, 50, 0.74), rgba(66, 57, 50, 0.88)), url(http://eco-nature.cmsmasters.net/onepage/wp-content/uploads/sites/2/2014/07/parallax_two.jpg);
+}
+
+.gallary-wrapper .title {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.gallary {}
+
+.gallary img {
+    width: 262px;
+    height: 157px;
+    margin-left: 15px;
+}
+
+.gallary img:first-child {
+    margin-left: 0;
+}
+
+.wrap-footer {
+    background-color: rgba(90, 90, 90, 1);
+    color: #fff;
+    padding: 20px 0;
+}
+
+.footer {}
+
+.main {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 40px;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    box-shadow: 1px 1px 5px #ccc;
+}
+
+.main p {}
+
+.main .title {
+    text-align: center;
+    color: rgba(97, 169, 62, 1);
+    margin-bottom: 30px;
+}
+
+.main .title label {}
+
+.main .title span {}
+
+.wrapper .bx-wrapper {
+    border: none;
+}
