@@ -43,6 +43,7 @@ body {
     background-color: #fff;
     padding: 30px;
     height: 190px;
+    position: relative;
 }
 
 .header .logo {
@@ -50,6 +51,7 @@ body {
     margin-top: 15px;
     margin-bottom: 15px;
     background-color: transparent;
+    position: absolute;
 }
 
 .header .logo img {
@@ -67,6 +69,7 @@ body {
     color: #fff;
     margin-top: 12px;
     margin-left: 60px;
+    text-align: center;
 }
 
 .banner div {
