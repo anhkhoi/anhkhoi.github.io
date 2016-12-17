@@ -41,9 +41,10 @@ body {
 
 .header {
     background-color: #fff;
-    padding: 30px;
-    height: 190px;
+    padding: 33px;
+    height: 200px;
     position: relative;
+    background: linear-gradient(rgba(97, 169, 62, 0.87), rgb(97, 169, 62)), url(http://eco-nature.cmsmasters.net/onepage/wp-content/uploads/sites/2/2014/07/parallax_wood.jpg);
 }
 
 .header .logo {
@@ -77,21 +78,18 @@ body {
 }
 
 .banner span {
-    font-size: 18px;
+    font-size: 20px;
     text-transform: uppercase;
-    color: #423932;
 }
 
 .banner label {
     margin-right: 5px;
-    color: #b1b1b1;
     font-weight: 600;
 }
 
 .banner .company-name {
     font-weight: 600;
     font-size: 26px;
-    color: #61a93e;
     text-transform: uppercase;
 }
 
@@ -102,7 +100,6 @@ body {
 #navbar {}
 
 #navbar {
-    border-top: 1px solid rgba(235, 235, 235, 1);
     background-color: #f3f3f3;
 }
 
