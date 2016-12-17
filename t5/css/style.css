@@ -92,6 +92,7 @@ body {
     font-weight: 600;
     font-size: 26px;
     color: #61a93e;
+    text-transform: uppercase;
 }
 
 .banner .mst {}
